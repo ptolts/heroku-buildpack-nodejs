@@ -17,7 +17,7 @@ install_yarn() {
   fi
 
   echo "Downloading and installing yarn ($version)..."
-  local download_url="https://yarnpkg.com/downloads/$version/yarn-v$version.tar.gz"
+  local download_url="https://github.com/yarnpkg/yarn/releases/download/v0.24.5/yarn-v0.24.5.tar.gz"
   local code=$(curl "$download_url" -L --silent --fail --retry 5 --retry-max-time 15 -o /tmp/yarn.tar.gz --write-out "%{http_code}")
   if [ "$code" != "200" ]; then
     echo "Unable to download yarn: $code" && false
